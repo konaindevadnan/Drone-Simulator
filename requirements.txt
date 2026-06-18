@@ -1,0 +1,44 @@
+# =========================================================
+#   DRONE SIMULATOR COMPLETE SYSTEM REQUIREMENTS LIST
+# =========================================================
+
+# ---------------------------------------------------------
+# 1. NODE.JS DEPENDENCIES (Install via: npm install <package>)
+# ---------------------------------------------------------
+# three                 -> Core 3D engine and WebGL rendering canvas
+# socket.io            -> Backend real-time communication server framework
+# socket.io-client     -> Frontend WebSocket client connection handler
+# qrcode.vue           -> Dynamic mobile controller link QR generation component
+# vite                 -> Ultra-fast frontend build router tool
+# @vitejs/plugin-vue   -> Official Vue single-file component compilation support
+# os                   -> Native system hardware/network interface scanner
+
+
+# ---------------------------------------------------------
+# 2. PYTHON DEPENDENCIES (Install via: pip install -r requirements.txt)
+# ---------------------------------------------------------
+
+# Core Frameworks & Math
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Graphics, Windows, & Game Loops
+pygame>=2.5.0
+opencv-python>=4.8.0
+opencv-contrib-python>=4.8.0
+Pillow>=10.0.0
+
+# Networking & Communication
+websockets>=11.0
+requests>=2.31.0
+urllib3>=2.0.0
+socketio-client>=0.7.2
+python-socketio>=5.10.0
+
+# Utilities & System Automation
+pynput>=1.7.6
+pyyaml>=6.0.1
+colorama>=0.4.6
+
+# Automatic Code Scanner (Ensures any extra hidden imports are found)
+pipreqs>=0.4.13

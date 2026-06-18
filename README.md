@@ -1,2 +1,2 @@
-# Drone Simulator
-A high-fidelity drone flight simulator with a dual-device architecture: the primary browser renders a photorealistic 3D environment using Three.js, while a secondary mobile interface (Vue 3) provides manual flight telemetry and look-angle controls. Features include octree-based collision detection, third-person (TPV) and first-person (FPV) camera modes, and real-time battery / range tracking via Socket.io networking. Unreal Engine 5 WebXR Three.js Vue 3 Socket.io
+# MimARDroneGit
+
