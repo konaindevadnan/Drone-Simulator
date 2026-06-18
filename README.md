@@ -1,18 +1,18 @@
 # Dual-Device High-Fidelity Drone Simulator 🛸📱
 
-[cite_start]An interactive, real-time web application featuring a sophisticated **dual-device architecture**[cite: 3]. [cite_start]The system splits the user experience across two network nodes: a primary desktop web browser (**The Viewer**) renders a high-performance, photorealistic 3D flight simulation, while a secondary mobile interface (**The Controller**) acts as a handheld flight deck managing manual telemetry inputs and gimbal look-angles[cite: 4].
+An interactive, real-time web application featuring a sophisticated **dual-device architecture**. The system splits the user experience across two network nodes: a primary desktop web browser (**The Viewer**) renders a high-performance, photorealistic 3D flight simulation, while a secondary mobile interface (**The Controller**) acts as a handheld flight deck managing manual telemetry inputs and gimbal look-angles.
 
 ---
 
 ## 🚀 Key Features
 
-- [cite_start]**Dual-Device Synchronization:** Real-time, low-latency control streams and telemetry tracking bridged seamlessly over WebSockets[cite: 5, 7].
-- [cite_start]**Automated LAN Networking:** Zero-configuration network setup[cite: 9]. [cite_start]The system auto-detects the host's local IP [cite: 10, 14][cite_start], configures Vite to listen across the entire LAN [cite: 13][cite_start], and generates a **dynamic QR code** on the main screen for instant mobile pairing[cite: 17].
-- [cite_start]**Multi-Touch Virtual Flight Sticks:** Cross-browser touch handling using PointerEvents with a 55px vector normalization radius and a **20% dead-zone clamp** to eliminate thumb drift[cite: 20, 21, 22].
-- [cite_start]**Advanced Camera Configurations:** - *Third-Person View (TPV):* An organic trailing camera array using spherical linear interpolations (Slerp)[cite: 28].
-  - [cite_start]*First-Person View (FPV):* A cockpit-mounted camera with a **35° dynamic gimbal tilt** range slider and physical focal-length zoom simulation[cite: 29, 30, 31].
-- [cite_start]**Octree Collision Assessment:** Real-time spatial partitioning that parses static terrain into an Octree[cite: 33]. [cite_start]The drone is calculated as a 3D mathematical sphere [cite: 34][cite_start], handling instant collision depth projections, velocity dampening, and impact-based sound effects[cite: 35, 36].
-- [cite_start]**Simulated Resource Telemetry:** Continuous tracking of a linear **5-minute battery drainage curve** [cite: 38] [cite_start]and Euclidean distance-based **Signal Strength attenuation** (100% strength up to 30m, degrading to 0% at a 180m ceiling)[cite: 40, 41].
+- **Dual-Device Synchronization:** Real-time, low-latency control streams and telemetry tracking bridged seamlessly over WebSockets.
+- **Automated LAN Networking:** Zero-configuration network setup. The system auto-detects the host's local IP, configures Vite to listen across the entire LAN, and generates a **dynamic QR code** on the main screen for instant mobile pairing.
+- **Multi-Touch Virtual Flight Sticks:** Cross-browser touch handling using PointerEvents with a 55px vector normalization radius and a **20% dead-zone clamp** to eliminate thumb drift.
+- **Advanced Camera Configurations:** - *Third-Person View (TPV):* An organic trailing camera array using spherical linear interpolations (Slerp).
+  - *First-Person View (FPV):* A cockpit-mounted camera with a **35° dynamic gimbal tilt** range slider and physical focal-length zoom simulation.
+- **Octree Collision Assessment:** Real-time spatial partitioning that parses static terrain into an Octree. The drone is calculated as a 3D mathematical sphere, handling instant collision depth projections, velocity dampening, and impact-based sound effects.
+- **Simulated Resource Telemetry:** Continuous tracking of a linear **5-minute battery drainage curve** and Euclidean distance-based **Signal Strength attenuation** (100% strength up to 30m, degrading to 0% at a 180m ceiling).
 
 ---
 
@@ -21,27 +21,23 @@
 ### System Overview & Mobile Control Demonstration
 *Below is a video walkthrough demonstrating the dual-device synchronization, FPV/TPV camera transitions, and environmental flight mechanics.*
 
-<p align="center">
-  <video src="Mobile%20Control%20Drone%20Simulator%20Project.mp4" width="100%" controls>
-    Your browser does not support the video tag.
-  </video>
-</p>
+https://github.com/konaindevadnan/Drone-Simulator/blob/main/Mobile%20Control%20Drone%20Simulator%20Project.mp4
 
 ---
 
 ## 🛠️ Technical Stack & Architecture
 
 ### 🖥️ 3D Simulation Engine (Viewer)
-- [cite_start]**Framework & Engine:** Three.js / Vue 3 (Vite) [cite: 7]
-- [cite_start]**Responsibilities:** Renders environment meshes, computes aerodynamic drag calculations (exponential damping friction of `0.9`), assesses bounding octree hulls, and maps projection matrices[cite: 7, 25].
+- **Framework & Engine:** Three.js / Vue 3 (Vite)
+- **Responsibilities:** Renders environment meshes, computes aerodynamic drag calculations (exponential damping friction of `0.9`), assesses bounding octree hulls, and maps projection matrices.
 
 ### 📱 Mobile Controller HUD (Controller)
-- [cite_start]**Framework & Input:** Vue 3 / HTML5 Touch API [cite: 7]
-- [cite_start]**Responsibilities:** Captures dual-joystick PointerEvents, maps camera gimbal rotation vectors, and visualizes real-time power/signal degradation states[cite: 7].
+- **Framework & Input:** Vue 3 / HTML5 Touch API
+- **Responsibilities:** Captures dual-joystick PointerEvents, maps camera gimbal rotation vectors, and visualizes real-time power/signal degradation states.
 
 ### 🌐 Network Relay Broker (Server)
-- [cite_start]**Runtime & Gateway:** Node.js / Socket.io [cite: 7]
-- [cite_start]**Responsibilities:** Bridges low-latency WebSocket traffic, creates virtual communication rooms, and automates host resolution mapping[cite: 7].
+- **Runtime & Gateway:** Node.js / Socket.io
+- **Responsibilities:** Bridges low-latency WebSocket traffic, creates virtual communication rooms, and automates host resolution mapping.
 
 ---
 
